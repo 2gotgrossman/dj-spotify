@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as $ from "jquery";
 import "../node_modules/hash.js";
 import RecentlyPlayedList from "./RecentlyPlayedList";
-import logo from "./logo.svg";
+import logo from "./logo.jpg";
 
 import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,9 +15,6 @@ const clientId = "2dd8785aefe9492ab77fdbbfdc7470e0";
 const redirectUri = "http://localhost:3000/";
 
 const scopes = [
-    "user-top-read",
-    "user-read-currently-playing",
-    "user-read-playback-state",
     "user-read-recently-played",
     "playlist-modify-private",
     "playlist-read-private",
@@ -48,6 +45,8 @@ class App extends Component {
       end_time: null,
     };
     this.getRecentlyPlayed = this.getRecentlyPlayed.bind(this);
+    console.log($.param({name: "Recently Played Songs "}))
+
   }
   componentDidMount() {
     // Set token
@@ -77,7 +76,7 @@ class App extends Component {
         });
 
         this.setState({
-          recently_played: data.items,
+          recently_played: data.items.reverse(),
           min: Math.min(...played_at_times),
           max: Math.max(...played_at_times),
         });
@@ -104,6 +103,7 @@ class App extends Component {
           {this.state.token && (
             <RecentlyPlayedList
               recently_played={this.state.recently_played}
+              token={this.state.token}
             />
           )}
         </header>
