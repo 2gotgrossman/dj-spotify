@@ -1,29 +1,115 @@
-.App {
+
+
+.myButton {
+	background-color:#3A0A7E;
+	border-radius:42px;
+	border:8px solid #C21133;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:17px;
+	font-weight:bold;
+	padding:16px 34px;
+	text-decoration:none;
+  position: absolute;
+  bottom: 80px;
+  right: 80px;
+}
+
+.myButton:hover {
+	background-color:#ffffff;
+  color: #3A0A7E;
+  text-decoration: none important;
+}
+
+
+.header-container {
+  position: relative;
   text-align: center;
+  color: white;
 }
 
 .App-logo {
-  width: 80%;
-  margin-top: 5%;
-  pointer-events: none;
-  align-items: center;
+  width: 100%;
+  margin-bottom: 5%;
   opacity: .9;
-  position: relative;
+  filter: brightness(80%);
+  background-size: cover;
+}
+
+.headerText {
+  color: white;
+  font-family: cursive sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+.subtitleText {
+  color: white;
+  text-align: left;
+  font-family: cursive sans-serif;
+  font-weight: auto;
+  font-size: 24px;
 }
 
 
 .App-header {
-  width: 100%;
-  background-color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
-  background-color: #F5F5F5;;
+  background-color: #F5F5F5;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+
+.containerHomePage {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    background-color: #18004A;
+
+    padding-bottom: 50%; /* 2:1 */
+}
+
+.containerSongsPage {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #18004A;
+  position: relative;
+  width: 100%;
+  padding-bottom: 30%; /* 2:1 */
+}
+
+.content {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction    : column;
+  -ms-flex-direction          : column;
+  flex-direction                : column;
+  -webkit-justify-content   : center;
+  justify-content               : center;
+
+  position: absolute;
+  top: -150px; bottom: 0; left: 30px; right: 30px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .container {
+        padding-bottom: 0;
+    }
+    .content {
+        position: relative;
+    top: 0; bottom: 0; left: 0; right: 0;
+        padding: 30px;
+    }
+
 }
