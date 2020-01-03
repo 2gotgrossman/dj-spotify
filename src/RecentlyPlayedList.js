@@ -32,7 +32,7 @@ class RecentlyPlayedList extends React.Component {
     else if (this.state.end_song === null && row_index >= this.state.start_song) {
       this.setState((_, __) => {
              return {end_song: row_index,
-                     footer_text: "Create playlist"};
+                     footer_text: "Create playlist!"};
       })
     }
 
@@ -40,9 +40,9 @@ class RecentlyPlayedList extends React.Component {
 
    getBgColor(index) {
       const bgColors = {
-        white: "#ffffff",
+        white: "ffffff",
         blue: "#00B1E1",
-        green: "#8CC152",
+        green: "lightgreen",
         red: "#E9573F"
       }
 
@@ -117,6 +117,7 @@ class RecentlyPlayedList extends React.Component {
         .map((song, _) =>
               song.track.uri)
       this.createRecentlyPlayedPlaylist(this.props.token, uris)
+        .then(() => window.open(this.state.playlist_uri, "_self"))
     }
   }
 
@@ -151,9 +152,11 @@ class RecentlyPlayedList extends React.Component {
           </div>
         </div>
 
-          <div className="footer" onClick={this.handleCreatePlaylistClick}>
-              {this.state.footer_text}
-          </div>
+          {this.state.start_song !== null && this.state.end_song !== null &&
+              <div className="footer" onClick={this.handleCreatePlaylistClick}>
+                {this.state.footer_text}
+              </div>
+          }
       </div>
     );
   }
@@ -161,7 +164,8 @@ class RecentlyPlayedList extends React.Component {
 
 function Song(props) {
   return (
-    <tr key={props.index}
+    <tr
+    key={props.index}
     onClick={() => props.handleClick(props.index)}
     style={{backgroundColor: props.bgColor()}}>
     <td scope="row">{props.index + 1}</td>
