@@ -15,7 +15,7 @@ const authEndpoint = "https://accounts.spotify.com/authorize";
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "2dd8785aefe9492ab77fdbbfdc7470e0";
-const redirectUri = "http://localhost:3000/";
+const redirectUri = "https://dj-now-create-playlist-later.web.app/";
 
 const scopes = [
     "user-read-recently-played",
@@ -119,6 +119,7 @@ class App extends Component {
             <div >
                <div className='containerSongsPage' style={{backgroundImage: `url(${logo_lower})`}}>
                <div class="content">
+                <p className='headerTextSongsPage'>Build a playlist from your <br/> recently played song</p>
                  <p className='subtitleText'>1. Select start song <br/>
                                              2. Select end songs <br/>
                                              3. Create playlist!</p>

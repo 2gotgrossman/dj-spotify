@@ -45,12 +45,19 @@
   font-size: 60px;
 }
 
+.headerTextSongsPage {
+  color: white;
+  font-family: cursive sans-serif;
+  font-weight: 800;
+  font-size: 2.5vw;
+}
+
 .subtitleText {
   color: white;
   text-align: left;
   font-family: cursive sans-serif;
   font-weight: auto;
-  font-size: 24px;
+  font-size: 1.75vw;
 }
 
 
@@ -98,7 +105,7 @@
   justify-content               : center;
 
   position: absolute;
-  top: -150px; bottom: 0; left: 30px; right: 30px;
+  top: 0vw; bottom: 0; left: 30px; right: 30px;
 }
 
 @media only screen and (max-width: 480px) {
