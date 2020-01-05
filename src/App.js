@@ -5,6 +5,7 @@ import "../node_modules/hash.js";
 import RecentlyPlayedList from "./RecentlyPlayedList";
 import logo from "./logo.jpg";
 import logo_lower from "./logo-lower.jpg";
+import {config} from "./Constants"
 
 
 import "./App.css";
@@ -15,7 +16,7 @@ const authEndpoint = "https://accounts.spotify.com/authorize";
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = "2dd8785aefe9492ab77fdbbfdc7470e0";
-const redirectUri = "https://dj-now-create-playlist-later.web.app/";
+const redirectUri = config.url.BASE_URL;
 
 const scopes = [
     "user-read-recently-played",
